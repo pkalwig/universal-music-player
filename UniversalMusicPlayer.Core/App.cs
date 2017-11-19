@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Platform.IoC;
+using MvvmCrossDocs.Core.ViewModels;
 
 namespace MvvmCrossDocs.Core
 {
@@ -11,7 +12,7 @@ namespace MvvmCrossDocs.Core
             .AsInterfaces()
             .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            RegisterNavigationServiceAppStart<FirstViewModel>();
         }
     }
 }
