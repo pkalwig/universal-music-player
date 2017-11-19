@@ -22,6 +22,8 @@ namespace MvvmCrossDocs.WindowsUniversal
             return new DebugTrace();
         }
 
+        // This is a known issue of MvvmCross (last check 5.4.2)
+        // More about issue on https://github.com/MvvmCross/MvvmCross/issues/2333
         protected override MvxLogProviderType GetDefaultLogProviderType()
         {
             return MvxLogProviderType.None;
