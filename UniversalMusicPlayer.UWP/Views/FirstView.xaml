@@ -11,6 +11,7 @@
         <StackPanel>
             <TextBox Text="{Binding Hello, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Text="{Binding Hello}" />
+            <Button Content="SCAN" Command="{Binding ScanCommand}" />
         </StackPanel>
     </Grid>
 </views:MvxWindowsPage>
