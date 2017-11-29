@@ -8,9 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <TextBox Text="{Binding Hello, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="{Binding Hello}" />
+        <StackPanel
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
             <Button Content="SCAN" Command="{Binding ScanCommand}" />
         </StackPanel>
     </Grid>
