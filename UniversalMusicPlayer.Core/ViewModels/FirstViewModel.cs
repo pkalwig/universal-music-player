@@ -9,6 +9,8 @@ namespace MvvmCrossDocs.Core.ViewModels
 {
     public class FirstViewModel : MvxViewModel
     {
+        private readonly IFileService _fileServce;
+
         public FirstViewModel(IFileService fileServce)
         {
             Hello = "Hello MvvmCross";
@@ -30,12 +32,13 @@ namespace MvvmCrossDocs.Core.ViewModels
             set => SetProperty(ref _hello, value);
         }
 
-        ICommand ScanCommand { get; }
+        public ICommand ScanCommand { get; }
         private async Task ScanAction()
         {
             await _fileServce.ScanLocalLibrary();
+            MusicLibrary = _fileServce.AudioFiles;
+
         }
 
-        private readonly IFileService _fileServce;
     }
 }
