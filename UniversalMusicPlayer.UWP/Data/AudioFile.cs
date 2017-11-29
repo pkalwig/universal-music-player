@@ -3,13 +3,13 @@ using Windows.Storage;
 
 namespace UniversalMusicPlayer.UWP.Data
 {
-    public class AudioFile : IAudioFile
+    public class AudioFile : IAudioFile<StorageFile>
     {
         public AudioFile(StorageFile storageFile)
         {
             File = storageFile;
         }
 
-        public object File { get; }
+        public StorageFile File { get; }
     }
 }
