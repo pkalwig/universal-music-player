@@ -1,7 +1,10 @@
 ﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using MvvmCross.Platform.Logging;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Uwp.Platform;
+using UniversalMusicPlayer.Core.Services;
+using UniversalMusicPlayer.UWP.Services.Prod;
 using Windows.UI.Xaml.Controls;
 
 namespace MvvmCrossDocs.WindowsUniversal
@@ -27,6 +30,12 @@ namespace MvvmCrossDocs.WindowsUniversal
         protected override MvxLogProviderType GetDefaultLogProviderType()
         {
             return MvxLogProviderType.None;
+        }
+
+        public override void Initialize()
+        {
+            base.Initialize();
+            Mvx.LazyConstructAndRegisterSingleton<IFileService, FileService>();
         }
     }
 }
