@@ -19,12 +19,18 @@ namespace UniversalMusicPlayer.UWP.Services.Prod
             ".flac"
         };
 
+        private readonly QueryOptions _queryOptions;
+
+        public FileService()
+        {
+            _queryOptions = new QueryOptions(CommonFileQuery.OrderByName, _supportedFileExtensions);
+        }
+
         public IEnumerable<IAudioFile> AudioFiles { get; private set; }
 
         public async Task ScanLocalLibrary()
         {
-            QueryOptions queryOptions = new QueryOptions(CommonFileQuery.OrderByName, _supportedFileExtensions);
-            StorageFileQueryResult library = KnownFolders.MusicLibrary.CreateFileQueryWithOptions(queryOptions);
+            var library = KnownFolders.MusicLibrary.CreateFileQueryWithOptions(_queryOptions);
             var storageFiles = await library.GetFilesAsync();
             AudioFiles = ConvertAllToAudioFiles(storageFiles);
         }
