@@ -36,6 +36,7 @@ namespace UniversalMusicPlayer.UWP
         {
             base.Initialize();
             Mvx.LazyConstructAndRegisterSingleton<IFileService, FileService>();
+            Mvx.LazyConstructAndRegisterSingleton<IChecksumProviderService, ChecksumProviderService>();
         }
     }
 }
