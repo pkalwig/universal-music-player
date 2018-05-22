@@ -102,9 +102,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Prod\FileService.cs" />
     <Compile Include="Services\Prod\MediaPlaybackService.cs" />
     <Compile Include="Services\Prod\ChecksumProviderService.cs" />
+    <Compile Include="Services\Prod\AudioFileScannerService.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>

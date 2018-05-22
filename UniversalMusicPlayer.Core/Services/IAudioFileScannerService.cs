@@ -4,9 +4,8 @@ using UniversalMusicPlayer.Core.Data;
 
 namespace UniversalMusicPlayer.Core.Services
 {
-    public interface IFileService
+    public interface IAudioFileScannerService
     {
-        IEnumerable<IAudioFile> AudioFiles { get; }
-        Task ScanLocalLibraryAsync();
+        Task<IEnumerable<AudioFileDoc>> GetAudioFilesAsync();
     }
 }

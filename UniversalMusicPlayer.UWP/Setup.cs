@@ -37,7 +37,8 @@ namespace UniversalMusicPlayer.UWP
         public override void Initialize()
         {
             base.Initialize();
-            Mvx.LazyConstructAndRegisterSingleton<IFileService, FileService>();
+
+            Mvx.LazyConstructAndRegisterSingleton<IAudioFileScannerService, AudioFileScannerService>();
             Mvx.LazyConstructAndRegisterSingleton<ISystemPathProvider, SystemPathProvider>();
             Mvx.LazyConstructAndRegisterSingleton<IChecksumProviderService, ChecksumProviderService>();
         }
