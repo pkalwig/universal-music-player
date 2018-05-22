@@ -9,17 +9,31 @@
 
     <Grid
 		Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel
-			Orientation="Vertical">
-            <Button 
-	            Command="{Binding ScanCommand}"
-				Content="{Binding Strings.Scan, Source={StaticResource LocalizedStrings}}"
-				HorizontalAlignment="Center" />
-			<ListView 
-				ItemsSource="{Binding MusicLibrary}" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button
+            Grid.Row="0"
+            Command="{Binding ScanCommand}"
+				HorizontalAlignment="Center"
+                >
+            <StackPanel
+                    Orientation="Horizontal"
+                    >
+                <TextBlock Text="{Binding Strings.Scan, Source={StaticResource LocalizedStrings}}" />
+                <ProgressRing
+                        IsActive="{Binding Path=IsScanning}"
+                        Visibility="{Binding Path=IsScanning}"
+                        />
+            </StackPanel>
+        </Button>
+        <ListView
+                Grid.Row="1"
+				ItemsSource="{Binding Path=MusicLibrary}"
 				ItemTemplate="{StaticResource MusicLibraryDataTemplate}"
 				ItemContainerStyle="{StaticResource ListViewItemContainerStyle}"
-				HeaderTemplate="{StaticResource MusicLibraryHeaderTemplate}" />
-        </StackPanel>
+				HeaderTemplate="{StaticResource MusicLibraryHeaderTemplate}"
+                />
     </Grid>
 </views:MvxWindowsPage>
