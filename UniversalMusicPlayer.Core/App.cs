@@ -8,7 +8,12 @@ namespace UniversalMusicPlayer.Core
         public override void Initialize()
         {
             CreatableTypes()
-            .EndingWith("Service")
+                .EndingWith("Service")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
+
+            CreatableTypes()
+            .EndingWith("Provider")
             .AsInterfaces()
             .RegisterAsLazySingleton();
 

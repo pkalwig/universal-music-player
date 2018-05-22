@@ -6,6 +6,8 @@ using MvvmCross.Platform.Platform;
 using MvvmCross.Uwp.Platform;
 using UniversalMusicPlayer.Core.Services;
 using UniversalMusicPlayer.UWP.Services.Prod;
+using UniversalMusicPlayer.Core.Config;
+using UniversalMusicPlayer.UWP.Config;
 
 namespace UniversalMusicPlayer.UWP
 {
@@ -36,6 +38,7 @@ namespace UniversalMusicPlayer.UWP
         {
             base.Initialize();
             Mvx.LazyConstructAndRegisterSingleton<IFileService, FileService>();
+            Mvx.LazyConstructAndRegisterSingleton<ISystemPathProvider, SystemPathProvider>();
             Mvx.LazyConstructAndRegisterSingleton<IChecksumProviderService, ChecksumProviderService>();
         }
     }

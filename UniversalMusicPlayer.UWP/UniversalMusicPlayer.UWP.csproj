@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\AudioFile.cs" />
+    <Compile Include="Config\SystemPathProvider.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
