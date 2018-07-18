@@ -96,7 +96,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Config\SystemPathProvider.cs" />
-    <Compile Include="DebugTrace.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -153,10 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.2</Version>
+      <Version>6.1.5</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
-      <Version>5.4.2</Version>
+      <Version>6.1.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

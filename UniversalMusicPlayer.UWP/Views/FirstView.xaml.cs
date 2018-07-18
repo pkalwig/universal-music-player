@@ -1,4 +1,4 @@
-﻿using MvvmCross.Uwp.Views;
+﻿using MvvmCross.Platforms.Uap.Views;
 
 namespace UniversalMusicPlayer.UWP.Views
 {
@@ -9,7 +9,7 @@ namespace UniversalMusicPlayer.UWP.Views
     {
         public FirstView()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }

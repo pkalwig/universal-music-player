@@ -1,9 +1,10 @@
-﻿using MvvmCross.Platform.IoC;
+﻿using MvvmCross.IoC;
+using MvvmCross.ViewModels;
 using UniversalMusicPlayer.Core.ViewModels;
 
 namespace UniversalMusicPlayer.Core
 {
-    public class App : MvvmCross.Core.ViewModels.MvxApplication
+    public class App : MvxApplication
     {
         public override void Initialize()
         {
@@ -17,7 +18,7 @@ namespace UniversalMusicPlayer.Core
             .AsInterfaces()
             .RegisterAsLazySingleton();
 
-            RegisterNavigationServiceAppStart<FirstViewModel>();
+            RegisterAppStart<FirstViewModel>();
         }
     }
 }

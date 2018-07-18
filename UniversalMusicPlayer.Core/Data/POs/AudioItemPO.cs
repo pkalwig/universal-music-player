@@ -1,4 +1,4 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using MvvmCross.Commands;
 using System;
 using System.Windows.Input;
 

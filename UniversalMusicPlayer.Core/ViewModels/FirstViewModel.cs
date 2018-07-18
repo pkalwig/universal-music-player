@@ -3,7 +3,8 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Commands;
+using MvvmCross.ViewModels;
 using UniversalMusicPlayer.Core.Data.POs;
 using UniversalMusicPlayer.Core.Services;
 

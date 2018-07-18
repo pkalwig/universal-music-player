@@ -1,21 +1,22 @@
-﻿<Application
+﻿<local:UWPApplication
     x:Class="UniversalMusicPlayer.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:applicationResources="using:UniversalMusicPlayer.Core.Helpers"
+    xmlns:local="using:UniversalMusicPlayer.UWP"
 	RequestedTheme="Light">
-	<Application.Resources>
+    <local:UWPApplication.Resources>
 		<ResourceDictionary>
 			<!-- Translations -->
 			<applicationResources:LocalizedStrings x:Key="LocalizedStrings"/>
-			
+
 			<ResourceDictionary.MergedDictionaries>
 				<!-- Templates -->
 				<ResourceDictionary Source="Resources/Templates.xaml" />
-				
+
 				<!-- Styles -->
 				<ResourceDictionary Source="Resources/Styles/ListViewItemContainerStyle.xaml"/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
-	</Application.Resources>
-</Application>
+	</local:UWPApplication.Resources>
+</local:UWPApplication>

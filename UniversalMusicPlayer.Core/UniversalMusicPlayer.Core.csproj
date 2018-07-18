@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="LiteDB" Version="4.1.2" />
-    <PackageReference Include="MvvmCross" Version="5.4.2" />
+    <PackageReference Include="MvvmCross" Version="6.1.2" />
   </ItemGroup>
 
   <ItemGroup>
