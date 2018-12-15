@@ -10,7 +10,7 @@ namespace UniversalMusicPlayer.Core.Data.POs
 		public AudioItemPO(Guid id, Func<Guid, Task> playAction)
 		{
 			Id = id;
-			PlayCommand = new MvxAsyncCommand<Guid>(playAction);
+			PlayCommand = new MvxAsyncCommand(() => playAction(Id));
 		}
 
 		public Guid Id { get; }
