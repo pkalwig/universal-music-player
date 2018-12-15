@@ -2,14 +2,35 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+	<SupportedCultures>en;pl</SupportedCultures>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Resources\Strings.xaml" />
+    <PackageReference Include="MvvmCross" Version="5.4.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="5.4.2" />
+    <Compile Update="Strings\en\ApplicationStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApplicationStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Strings\pl\ApplicationStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApplicationStrings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Strings\en\ApplicationStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Strings\pl\ApplicationStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

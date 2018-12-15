@@ -111,6 +111,8 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <PRIResource Include="Strings\en\Resources.resw" />
+    <PRIResource Include="Strings\pl\Resources.resw" />
     <None Include="UniversalMusicPlayer.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

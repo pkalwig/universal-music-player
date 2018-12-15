@@ -11,13 +11,13 @@
 			</Grid.ColumnDefinitions>
 			<TextBlock
 				Grid.Column="0"
-				Text="{StaticResource Artist}"/>
-			<TextBlock 
+				Text="{Binding Strings.Artist, Source={StaticResource LocalizedStrings}}"/>
+			<TextBlock
 				Grid.Column="1"
-				Text="{StaticResource Album}"/>
+				Text="{Binding Strings.Album, Source={StaticResource LocalizedStrings}}"/>
 			<TextBlock
 				Grid.Column="2"
-				Text="{StaticResource Title}"/>
+				Text="{Binding Strings.Title, Source={StaticResource LocalizedStrings}}"/>
 		</Grid>
 	</DataTemplate>
 

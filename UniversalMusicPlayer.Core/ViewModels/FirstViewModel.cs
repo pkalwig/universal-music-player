@@ -9,7 +9,7 @@ using UniversalMusicPlayer.Core.Services;
 namespace UniversalMusicPlayer.Core.ViewModels
 {
     public class FirstViewModel : MvxViewModel
-    {
+	{
         private readonly IFileService _fileServce;
 
         public FirstViewModel(IFileService fileServce)
