@@ -13,7 +13,6 @@ namespace UniversalMusicPlayer.UWP
         {
             Mvx.LazyConstructAndRegisterSingleton<IAudioFileScannerService, AudioFileScannerService>();
             Mvx.LazyConstructAndRegisterSingleton<ISystemPathProvider, SystemPathProvider>();
-            Mvx.LazyConstructAndRegisterSingleton<IChecksumProviderService, ChecksumProviderService>();
             Mvx.LazyConstructAndRegisterSingleton<IAudioPlaybackService, AudioPlaybackService>();
 
             base.InitializeFirstChance();
