@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
@@ -18,8 +19,8 @@ namespace UniversalMusicPlayer.Core.ViewModels
             ScanCommand = new MvxAsyncCommand(ScanAction);
         }
 
-        private ICollection<IAudioFile> _musicLibrary;
-        public ICollection<IAudioFile> MusicLibrary
+        private ICollection<PlaylistItem> _musicLibrary;
+        public ICollection<PlaylistItem> MusicLibrary
         {
             get => _musicLibrary;
             set => SetProperty(ref _musicLibrary, value);
@@ -29,7 +30,14 @@ namespace UniversalMusicPlayer.Core.ViewModels
         private async Task ScanAction()
         {
             await _fileServce.ScanLocalLibraryAsync();
-            MusicLibrary = new ObservableCollection<IAudioFile>(_fileServce.AudioFiles);
+            MusicLibrary = new ObservableCollection<PlaylistItem>(
+				_fileServce.AudioFiles.Select(
+					audioFile => new PlaylistItem(audioFile, PlaySelectedAction)));
         }
+
+		private void PlaySelectedAction(IAudioFile audioFile)
+		{
+			//TODO: some service that will play file
+		}
     }
 }

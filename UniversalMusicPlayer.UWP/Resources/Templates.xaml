@@ -2,7 +2,8 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-	<DataTemplate x:Key="MusicLibraryHeaderTemplate">
+	<DataTemplate
+		x:Key="MusicLibraryHeaderTemplate">
 		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition/>
@@ -21,7 +22,8 @@
 		</Grid>
 	</DataTemplate>
 
-	<DataTemplate x:Key="MusicLibraryDataTemplate">
+	<DataTemplate
+		x:Key="MusicLibraryDataTemplate">
 		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition/>
@@ -30,13 +32,13 @@
 			</Grid.ColumnDefinitions>
 			<TextBlock
 				Grid.Column="0"
-				Text="{Binding Artist}"/>
+				Text="{Binding AudioFile.Artist}"/>
 			<TextBlock 
 				Grid.Column="1"
-				Text="{Binding Album}"/>
+				Text="{Binding AudioFile.Album}"/>
 			<TextBlock
 				Grid.Column="2"
-				Text="{Binding Title}"/>
+				Text="{Binding AudioFile.Title}"/>
 		</Grid>
 	</DataTemplate>
 </ResourceDictionary>
