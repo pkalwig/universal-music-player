@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using MvvmCross.Platform.Platform;
 
-namespace MvvmCrossDocs.WindowsUniversal
+namespace UniversalMusicPlayer.UWP
 {
     public class DebugTrace : IMvxTrace
     {

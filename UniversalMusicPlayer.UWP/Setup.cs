@@ -1,13 +1,13 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Windows.UI.Xaml.Controls;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Logging;
 using MvvmCross.Platform.Platform;
 using MvvmCross.Uwp.Platform;
 using UniversalMusicPlayer.Core.Services;
 using UniversalMusicPlayer.UWP.Services.Prod;
-using Windows.UI.Xaml.Controls;
 
-namespace MvvmCrossDocs.WindowsUniversal
+namespace UniversalMusicPlayer.UWP
 {
     public class Setup : MvxWindowsSetup
     {

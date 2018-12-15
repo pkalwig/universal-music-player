@@ -1,9 +1,7 @@
-﻿using MvvmCross.Platform;
-using MvvmCross.Platform.IoC;
-using MvvmCrossDocs.Core.ViewModels;
-using UniversalMusicPlayer.Core.Services;
+﻿using MvvmCross.Platform.IoC;
+using UniversalMusicPlayer.Core.ViewModels;
 
-namespace MvvmCrossDocs.Core
+namespace UniversalMusicPlayer.Core
 {
     public class App : MvvmCross.Core.ViewModels.MvxApplication
     {

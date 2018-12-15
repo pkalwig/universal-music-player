@@ -1,11 +1,11 @@
-﻿using MvvmCross.Core.ViewModels;
-using System.Windows.Input;
-using UniversalMusicPlayer.Core.Services;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using System.Windows.Input;
+using MvvmCross.Core.ViewModels;
 using UniversalMusicPlayer.Core.Data;
+using UniversalMusicPlayer.Core.Services;
 
-namespace MvvmCrossDocs.Core.ViewModels
+namespace UniversalMusicPlayer.Core.ViewModels
 {
     public class FirstViewModel : MvxViewModel
     {

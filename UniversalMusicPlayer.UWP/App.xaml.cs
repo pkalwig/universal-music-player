@@ -1,5 +1,4 @@
 ﻿using MvvmCross.Platform;
-using MvvmCrossDocs.WindowsUniversal;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
