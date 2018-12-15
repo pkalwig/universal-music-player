@@ -1,4 +1,9 @@
-﻿using MvvmCross.Platforms.Android.Core;
+﻿using MvvmCross;
+using MvvmCross.Platforms.Android.Core;
+using UniversalMusicPlayer.Core.Config;
+using UniversalMusicPlayer.Core.Services;
+using UniversalMusicPlayer.Droid.Config;
+using UniversalMusicPlayer.Droid.Services.Prod;
 
 namespace UniversalMusicPlayer.Droid
 {
@@ -6,6 +11,9 @@ namespace UniversalMusicPlayer.Droid
 	{
 		protected override void InitializeFirstChance()
 		{
+			Mvx.LazyConstructAndRegisterSingleton<IAudioFileScannerService, AudioFileScannerService>();
+			Mvx.LazyConstructAndRegisterSingleton<ISystemPathProvider, SystemPathProvider>();
+
 			base.InitializeFirstChance();
 		}
 
