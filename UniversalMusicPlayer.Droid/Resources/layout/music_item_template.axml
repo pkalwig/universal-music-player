@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="0dp"
+		android:layout_weight="1"
+		android:layout_height="match_parent">
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAllCaps="true"
+			android:textStyle="bold"
+			app:MvxBind="Text Artist" />
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			app:MvxBind="Text Album" />
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:MvxBind="Text Title" />
+	</LinearLayout>
+	<!--<ImageButton
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:src="@mipmap"
+		/>-->
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:text="PLAY"
+		app:MvxBind="Click PlayCommand" />
+</LinearLayout>
