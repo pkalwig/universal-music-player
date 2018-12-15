@@ -12,11 +12,13 @@
         <StackPanel
 			Orientation="Vertical">
             <Button 
-				Content="SCAN"
+				Content="{StaticResource Scan}"
 				Command="{Binding ScanCommand}"
 				HorizontalAlignment="Center"/>
 			<ListView 
-				ItemsSource="{Binding MusicLibrary}" ItemTemplate="{StaticResource MusicLibraryDataTemplate}">
+				ItemsSource="{Binding MusicLibrary}" 
+				ItemTemplate="{StaticResource MusicLibraryDataTemplate}" 
+				HeaderTemplate="{StaticResource MusicLibraryHeaderTemplate}">
 			</ListView>
         </StackPanel>
     </Grid>

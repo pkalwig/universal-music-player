@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using UniversalMusicPlayer.Core.Data;
 using UniversalMusicPlayer.Core.Services;
@@ -43,15 +42,21 @@ namespace UniversalMusicPlayer.UWP.Services.Prod
 			}
 	        catch (Exception e)
 	        {
-		        throw;
+		        Debug.WriteLine(e.Message);
+				throw;
 	        }
 #endif
-	        IAudioFile audioFile = await CreateAudioFile(storageFiles.First());
-	        AudioFiles = new[] {audioFile};
-	        //AudioFiles = (IEnumerable<IAudioFile>) storageFiles.Select(async storageFile => await CreateAudioFile(storageFile));
+
+	        var files = new List<IAudioFile>();
+	        foreach (var storageFile in storageFiles)
+	        {
+		        var file = await CreateAudioFileAsync(storageFile);
+				files.Add(file);
+	        }
+	        AudioFiles = files;
         }
 		
-	    private static async Task<AudioFile> CreateAudioFile(StorageFile storageFile)
+	    private static async Task<AudioFile> CreateAudioFileAsync(StorageFile storageFile)
 	    {
 		    var audioFile = new AudioFile(storageFile);
 		    await audioFile.GetMusicProperties();
