@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace UniversalMusicPlayer.Core.Services
 {
-    public interface IAudioPlaybackService
-    {
-	    void Play(Guid id);
-    }
+	public interface IAudioPlaybackService
+	{
+		Task Play(Guid id);
+	}
 }

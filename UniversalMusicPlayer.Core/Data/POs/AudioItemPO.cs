@@ -1,21 +1,22 @@
-﻿using MvvmCross.Commands;
-using System;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using MvvmCross.Commands;
 
 namespace UniversalMusicPlayer.Core.Data.POs
 {
-    public class AudioItemPO
-    {
-        public AudioItemPO(Guid id, Action<Guid> playAction)
-        {
-            Id = id;
-            PlayCommand = new MvxCommand<Guid>(data => playAction(Id));
-        }
+	public class AudioItemPO
+	{
+		public AudioItemPO(Guid id, Func<Guid, Task> playAction)
+		{
+			Id = id;
+			PlayCommand = new MvxAsyncCommand<Guid>(playAction);
+		}
 
-        public Guid Id { get; }
-        public string Artist { get; set; }
-        public string Album { get; set; }
-        public string Title { get; set; }
-        public ICommand PlayCommand { get; }
-    }
+		public Guid Id { get; }
+		public string Artist { get; set; }
+		public string Album { get; set; }
+		public string Title { get; set; }
+		public ICommand PlayCommand { get; }
+	}
 }
