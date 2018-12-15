@@ -16,5 +16,12 @@ namespace UniversalMusicPlayer.UWP
 
             base.InitializeFirstChance();
         }
+
+	    protected override void InitializeLastChance()
+	    {
+		    base.InitializeLastChance();
+
+		    Mvx.LazyConstructAndRegisterSingleton<IStreamOpenerService, UwpStreamOpenerService>();
+	    }
     }
 }
