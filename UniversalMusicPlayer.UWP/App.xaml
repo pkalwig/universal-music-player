@@ -6,9 +6,15 @@
 	RequestedTheme="Light">
 	<Application.Resources>
 		<ResourceDictionary>
+			<!-- Translations -->
 			<applicationResources:LocalizedStrings x:Key="LocalizedStrings"/>
+			
 			<ResourceDictionary.MergedDictionaries>
+				<!-- Templates -->
 				<ResourceDictionary Source="Resources/Templates.xaml" />
+				
+				<!-- Styles -->
+				<ResourceDictionary Source="Resources/Styles/ListViewItemContainerStyle.xaml"/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>

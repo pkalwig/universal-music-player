@@ -12,14 +12,14 @@
         <StackPanel
 			Orientation="Vertical">
             <Button 
+	            Command="{Binding ScanCommand}"
 				Content="{Binding Strings.Scan, Source={StaticResource LocalizedStrings}}"
-				Command="{Binding ScanCommand}"
-				HorizontalAlignment="Center"/>
+				HorizontalAlignment="Center" />
 			<ListView 
 				ItemsSource="{Binding MusicLibrary}" 
-				ItemTemplate="{StaticResource MusicLibraryDataTemplate}" 
-				HeaderTemplate="{StaticResource MusicLibraryHeaderTemplate}">
-			</ListView>
+				ItemTemplate="{StaticResource MusicLibraryDataTemplate}"
+				ItemContainerStyle="{StaticResource ListViewItemContainerStyle}"
+				HeaderTemplate="{StaticResource MusicLibraryHeaderTemplate}" />
         </StackPanel>
     </Grid>
 </views:MvxWindowsPage>
