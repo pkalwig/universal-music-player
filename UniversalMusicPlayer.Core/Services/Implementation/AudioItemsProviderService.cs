@@ -28,9 +28,9 @@ namespace UniversalMusicPlayer.Core.Services.Implementation
         {
             return new AudioItemPO(audioFileDoc.Id, _audioPlaybackService.Play)
             {
-                Artist = "artist",
-                Album = "album",
-                Title = "title"
+                Artist = audioFileDoc.Artist,
+                Album = audioFileDoc.Album,
+                Title = audioFileDoc.Title
             };
         }
     }

@@ -15,10 +15,12 @@ namespace UniversalMusicPlayer.UWP.Services.Prod
 	{
 		private readonly IChecksumProviderService _checksumProviderService;
 		private readonly IDataAccessService _dataAccessService;
+		private readonly IAudioMetadataProvider _audioMetadataProvider;
 		private readonly StorageFileQueryResult _fileQuery;
 		private readonly Stopwatch _sw;
 
 		public AudioFileScannerService(IChecksumProviderService checksumProviderService,
+			IDataAccessService dataAccessService, IAudioMetadataProvider audioMetadataProvider)
 		{
 			_checksumProviderService = checksumProviderService;
 			_dataAccessService = dataAccessService;
@@ -38,6 +40,7 @@ namespace UniversalMusicPlayer.UWP.Services.Prod
 			{
 				var audioFileDoc = MapStorageFile(storageFile);
 				audioFileDoc.Checksum = await _checksumProviderService.GetFileChecksum(audioFileDoc.FilePath);
+				await SetAudioMetadata(audioFileDoc);
 
 				AddToDb(audioFileDoc);
 
@@ -51,6 +54,13 @@ namespace UniversalMusicPlayer.UWP.Services.Prod
 			return audioFileDocs;
 		}
 
+		private async Task SetAudioMetadata(AudioFileDoc audioFileDoc)
+		{
+			var audioMetadata = await _audioMetadataProvider.GetAudioMetadata(audioFileDoc);
+			audioFileDoc.Artist = audioMetadata.Artist;
+			audioFileDoc.Album = audioMetadata.Album;
+			audioFileDoc.Title = audioMetadata.Title;
+		}
 
 		private void AddToDb(AudioFileDoc audioFileDoc)
 		{

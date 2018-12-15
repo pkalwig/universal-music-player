@@ -22,6 +22,7 @@ namespace UniversalMusicPlayer.UWP
 		    base.InitializeLastChance();
 
 		    Mvx.LazyConstructAndRegisterSingleton<IStreamOpenerService, UwpStreamOpenerService>();
+		    Mvx.LazyConstructAndRegisterSingleton<IAudioMetadataProvider, UwpAudioMetadataProvider>();
 	    }
     }
 }
