@@ -7,11 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid
+		Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center">
-            <Button Content="SCAN" Command="{Binding ScanCommand}" />
+			Orientation="Vertical">
+            <Button 
+				Content="SCAN"
+				Command="{Binding ScanCommand}"
+				HorizontalAlignment="Center"/>
+			<ListView 
+				ItemsSource="{Binding MusicLibrary}" ItemTemplate="{StaticResource MusicLibraryDataTemplate}">
+			</ListView>
         </StackPanel>
     </Grid>
 </views:MvxWindowsPage>

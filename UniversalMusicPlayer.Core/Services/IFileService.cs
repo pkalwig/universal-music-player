@@ -7,6 +7,6 @@ namespace UniversalMusicPlayer.Core.Services
     public interface IFileService
     {
         IEnumerable<IAudioFile> AudioFiles { get; }
-        Task ScanLocalLibrary();
+        Task ScanLocalLibraryAsync();
     }
 }

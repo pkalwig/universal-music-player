@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using UniversalMusicPlayer.Core.Data;
 using UniversalMusicPlayer.Core.Services;
@@ -15,7 +17,8 @@ namespace UniversalMusicPlayer.UWP.Services.Prod
         private readonly IReadOnlyList<string> _supportedFileExtensions = new List<string>
         {
             ".mp3",
-            ".ogg",
+	        ".m4a",
+			".ogg",
             ".flac"
         };
 
@@ -23,30 +26,36 @@ namespace UniversalMusicPlayer.UWP.Services.Prod
 
         public FileService()
         {
-            _queryOptions = new QueryOptions(CommonFileQuery.OrderByName, _supportedFileExtensions);
+	        _queryOptions = new QueryOptions(CommonFileQuery.OrderByName, _supportedFileExtensions);
         }
 
         public IEnumerable<IAudioFile> AudioFiles { get; private set; }
 
-        public async Task ScanLocalLibrary()
+        public async Task ScanLocalLibraryAsync()
         {
             var library = KnownFolders.MusicLibrary.CreateFileQueryWithOptions(_queryOptions);
-            var storageFiles = await library.GetFilesAsync();
-            AudioFiles = ConvertAllToAudioFiles(storageFiles);
+			var storageFiles = await library.GetFilesAsync();
+#if DEBUG
+			try
+	        {
+		        foreach (var file in storageFiles)
+			        Debug.WriteLine(file.Path);
+			}
+	        catch (Exception e)
+	        {
+		        throw;
+	        }
+#endif
+	        IAudioFile audioFile = await CreateAudioFile(storageFiles.First());
+	        AudioFiles = new[] {audioFile};
+	        //AudioFiles = (IEnumerable<IAudioFile>) storageFiles.Select(async storageFile => await CreateAudioFile(storageFile));
         }
-
-        private IAudioFile ConvertToAudioFile(StorageFile storageFile)
-        {
-            return new AudioFile(storageFile);
-        }
-
-        private IEnumerable<IAudioFile> ConvertAllToAudioFiles(IEnumerable<StorageFile> storageFiles)
-        {
-            foreach(StorageFile file in storageFiles)
-            {
-                yield return ConvertToAudioFile(file);
-            }
-        }
-        
+		
+	    private static async Task<AudioFile> CreateAudioFile(StorageFile storageFile)
+	    {
+		    var audioFile = new AudioFile(storageFile);
+		    await audioFile.GetMusicProperties();
+		    return audioFile;
+	    }
     }
 }

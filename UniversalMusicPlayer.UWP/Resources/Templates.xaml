@@ -1,0 +1,42 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<DataTemplate x:Key="MusicLibraryHeaderTemplate">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<TextBlock
+				Grid.Column="0"
+				Text="{StaticResource Artist}"/>
+			<TextBlock 
+				Grid.Column="1"
+				Text="{StaticResource Album}"/>
+			<TextBlock
+				Grid.Column="2"
+				Text="{StaticResource Title}"/>
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate x:Key="MusicLibraryDataTemplate">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<TextBlock
+				Grid.Column="0"
+				Text="{Binding Artist}"/>
+			<TextBlock 
+				Grid.Column="1"
+				Text="{Binding Album}"/>
+			<TextBlock
+				Grid.Column="2"
+				Text="{Binding Title}"/>
+		</Grid>
+	</DataTemplate>
+</ResourceDictionary>
