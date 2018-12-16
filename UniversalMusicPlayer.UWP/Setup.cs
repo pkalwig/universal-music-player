@@ -11,8 +11,8 @@ namespace UniversalMusicPlayer.UWP
     {
         protected override void InitializeFirstChance()
         {
-            Mvx.LazyConstructAndRegisterSingleton<IAudioFileScannerService, AudioFileScannerService>();
-            Mvx.LazyConstructAndRegisterSingleton<ISystemPathProvider, SystemPathProvider>();
+            Mvx.IoCProvider.RegisterType<IAudioFileScannerService, AudioFileScannerService>();
+            Mvx.IoCProvider.RegisterType<ISystemPathProvider, SystemPathProvider>();
 
             base.InitializeFirstChance();
         }
@@ -21,8 +21,8 @@ namespace UniversalMusicPlayer.UWP
 	    {
 		    base.InitializeLastChance();
 
-		    Mvx.LazyConstructAndRegisterSingleton<IStreamOpenerService, UwpStreamOpenerService>();
-		    Mvx.LazyConstructAndRegisterSingleton<IAudioMetadataProvider, UwpAudioMetadataProvider>();
+		    Mvx.IoCProvider.RegisterType<IStreamOpenerService, UwpStreamOpenerService>();
+		    Mvx.IoCProvider.RegisterType<IAudioMetadataProvider, UwpAudioMetadataProvider>();
 	    }
     }
 }

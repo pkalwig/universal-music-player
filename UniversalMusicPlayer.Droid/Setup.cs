@@ -11,8 +11,8 @@ namespace UniversalMusicPlayer.Droid
 	{
 		protected override void InitializeFirstChance()
 		{
-			Mvx.LazyConstructAndRegisterSingleton<IAudioFileScannerService, AudioFileScannerService>();
-			Mvx.LazyConstructAndRegisterSingleton<ISystemPathProvider, SystemPathProvider>();
+            Mvx.IoCProvider.RegisterType<IAudioFileScannerService, AudioFileScannerService>();
+			Mvx.IoCProvider.RegisterType<ISystemPathProvider, SystemPathProvider>();
 
 			base.InitializeFirstChance();
 		}
